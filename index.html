@@ -1,18 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Garage</h1>
-    <p>This is my garage</p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>student</title>
+		<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+	</head>
+	<body>
+		<h1>Students</h1>
+		<div>
+			<p id="parag">This is my school</p>
+			first name:<input id="firstName" />
+			<br />
+			last name:<input id="lastName" />
+			<br />
+			age:<input id="age" />
+			<br />
+			city:<input id="city" />
+			<br />
+            <button onclick="addStudent()">Add</button>
+		</div>
+		<div id="studentsShow"></div>
 
-    <input>
-    <script>
-        let cars = [];
+		<script>
+			let students = [];
+            const inputFirstName = document.getElementById("firstName");
+            const inputLastName = document.getElementById("lastName");
+			const inputAge = document.getElementById("age");
+            const inputCity = document.getElementById("city");
+			const studentsShow = document.getElementById("studentsShow");
 
-    </script>
-</body>
+			function showStudents() {
+				studentsShow.innerHTML = ``;
+				for (student of students) {
+					studentsShow.innerHTML += 
+                    `<div id="student">
+                        ID: ${student.id}
+                        First name: ${student.firstName}
+                        Last Name: ${student.lastName}
+                       age: ${student.age}
+                        city: ${student.city}
+                    </div>`;
+				}
+			}
+
+			async function getStudents() {
+				const response = await axios.get("http://localhost:3000/students");
+				console.log(response.data);
+				students = response.data;
+				showStudents();
+			}
+
+            async function addStudent() {
+                const newId = students.length + 1
+                const student = {"id": newId, "firstName": inputFirstName.value, "lastName": inputLastName.value, "age": inputAge.value, "city":inputCity.value}
+                const response = await axios.post("http://localhost:3000/students", student);
+                getStudents();
+                localStorage.setItem("students",JSON.stringify(students));
+            }
+
+            function getFromStorage() {
+                let newStudents = localStorage.getItem("students");
+                console.log(newStudents)
+
+            }
+
+			getStudents();
+            getFromStorage();
+		</script>
+	</body>
 </html>

@@ -1,1 +1,88 @@
-{}
+{
+  "students": [
+    {
+      "id": "1",
+      "firstName": "waga",
+      "lastName": "baga",
+      "age": 70,
+      "city": "tel aviv"
+    },
+    {
+      "id": "2",
+      "firstName": "waga2",
+      "lastName": "baga2",
+      "age": 22,
+      "city": "Ramat Hasharon"
+    },
+    {
+      "id": "3",
+      "firstName": "chen",
+      "lastName": "chenchen",
+      "age": 20,
+      "city": "Ramat Gan"
+    },
+    {
+      "id": 4,
+      "firstName": "chen",
+      "lastName": "guy",
+      "age": "12",
+      "city": "kiryat shmona"
+    },
+    {
+      "id": 5,
+      "firstName": "555",
+      "lastName": "555",
+      "age": "55",
+      "city": "555"
+    },
+    {
+      "id": 6,
+      "firstName": "6666",
+      "lastName": "666",
+      "age": "66",
+      "city": "66"
+    },
+    {
+      "id": 7,
+      "firstName": "77",
+      "lastName": "77",
+      "age": "77",
+      "city": "77"
+    },
+    {
+      "id": 8,
+      "firstName": "guy",
+      "lastName": "8",
+      "age": "88",
+      "city": "88"
+    },
+    {
+      "id": 9,
+      "firstName": "guy",
+      "lastName": "8",
+      "age": "88",
+      "city": "88"
+    },
+    {
+      "id": 10,
+      "firstName": "111",
+      "lastName": "111",
+      "age": "111",
+      "city": "111"
+    },
+    {
+      "id": 11,
+      "firstName": "new",
+      "lastName": "new",
+      "age": "newn",
+      "city": "new"
+    },
+    {
+      "id": 12,
+      "firstName": "new",
+      "lastName": "new",
+      "age": "new",
+      "city": "new"
+    }
+  ]
+}
